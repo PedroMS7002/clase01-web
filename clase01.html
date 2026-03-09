@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Primer ejemplo</title>
+    <style>
+        .parent { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    </style>
+</head>
+
+
+<body>
+<div class="parent">  
+    
+ <div>
+     <p>Sexo de la población</p>
+     <p> <span style="color:#D4845A;">hombres</span> / <span style="color:#4A90D9;">mujeres</span> </p>
+   <svg width="100%" height="100%" viewBox="0 0 42 42" id="primera">
+  <circle class="donut-hole" cx="21" cy="21" r="15" fill="#fff"></circle>
+  <circle class="donut-ring" cx="21" cy="21" r="15" fill="transparent" stroke="#4A90D9" stroke-width="5"></circle>
+  </svg> 
+ </div>
+  
+   <div>
+     <p>Tipo de matrimonios</p>
+     <p> <span style="color:#D4845A;">heterosexual</span> / <span style="color:#4A90D9;">homosexual</span> </p>
+   <svg width="100%" height="100%" viewBox="0 0 42 42" id="segunda">
+  <circle class="donut-hole" cx="21" cy="21" r="15" fill="#fff"></circle>
+  <circle class="donut-ring" cx="21" cy="21" r="15" fill="transparent" stroke="#4A90D9" stroke-width="5"></circle>
+  </svg>
+   </div>
+
+ <div>
+     <p>Mayoría de edad</p>
+     <p> <span style="color:#D4845A;">mayores</span> / <span style="color:#4A90D9;">menores</span> </p>
+   <svg width="100%" height="100%" viewBox="0 0 42 42" id="tercera">
+  <circle class="donut-hole" cx="21" cy="21" r="15" fill="#fff"></circle>
+  <circle class="donut-ring" cx="21" cy="21" r="15" fill="transparent" stroke="#4A90D9" stroke-width="5"></circle>
+  </svg>
+   </div>
+
+ <div>
+     <p>Matrimonio juvenil (<19)</p>
+     <p> <span style="color:#D4845A;">mujeres</span> / <span style="color:#4A90D9;">hombres</span> </p>
+   <svg width="100%" height="100%" viewBox="0 0 42 42" id="cuarta">
+  <circle class="donut-hole" cx="21" cy="21" r="15" fill="#fff"></circle>
+  <circle class="donut-ring" cx="21" cy="21" r="15" fill="transparent" stroke="#4A90D9" stroke-width="5"></circle>
+  </svg>
+   </div>
+
+
+
+    </div>
+    <script>
+        const data = [49.3, 97.2, 77.4, 73.8];
+        ["primera", "segunda", "tercera", "cuarta"].forEach((id, i) => {
+            document.querySelector(`#${id}`).innerHTML += `<circle cx="21" cy="21" r="15" fill="transparent" stroke="#D4845A" stroke-width="5" stroke-dasharray="${data[i]} ${100 - data[i]}" stroke-dashoffset="23"></circle>`;
+        });
+    </script>
+</body>
+</html> 
+
+
